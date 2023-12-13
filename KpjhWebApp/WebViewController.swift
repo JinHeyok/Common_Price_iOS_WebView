@@ -85,6 +85,7 @@ class WebViewController: UIViewController {
     
     // 웹뷰 로드
     
+    // urlString 변수에 사용할 url 입력(* 전송 프로토콜 붙여야 함 - http or https)
     let urlString = "https://www.google.com"
     Log.d("urlString : \(urlString)")
     if let url = URL(string: urlString) {

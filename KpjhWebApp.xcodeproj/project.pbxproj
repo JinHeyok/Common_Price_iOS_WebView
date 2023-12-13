@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BB872DCB2B29634800C5F6EC /* enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB872DCA2B29634800C5F6EC /* enums.swift */; };
 		BB872DCD2B2963CA00C5F6EC /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB872DCC2B2963CA00C5F6EC /* Logger.swift */; };
 		BB872DCF2B2963E100C5F6EC /* Date+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB872DCE2B2963E100C5F6EC /* Date+Ex.swift */; };
 		BBD2AB442B293DAF00377BDA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD2AB432B293DAF00377BDA /* AppDelegate.swift */; };
@@ -19,8 +18,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		BB872DC92B29621F00C5F6EC /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
-		BB872DCA2B29634800C5F6EC /* enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = enums.swift; sourceTree = "<group>"; };
 		BB872DCC2B2963CA00C5F6EC /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		BB872DCE2B2963E100C5F6EC /* Date+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Ex.swift"; sourceTree = "<group>"; };
 		BBD2AB402B293DAF00377BDA /* KpjhWebApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KpjhWebApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -70,8 +67,6 @@
 				BBD2AB4E2B293DB000377BDA /* LaunchScreen.storyboard */,
 				BBD2AB512B293DB000377BDA /* Info.plist */,
 				BBD2AB592B294D3400377BDA /* WebViewController.swift */,
-				BB872DC92B29621F00C5F6EC /* Config.xcconfig */,
-				BB872DCA2B29634800C5F6EC /* enums.swift */,
 				BB872DCC2B2963CA00C5F6EC /* Logger.swift */,
 				BB872DCE2B2963E100C5F6EC /* Date+Ex.swift */,
 			);
@@ -150,7 +145,6 @@
 			files = (
 				BBD2AB482B293DAF00377BDA /* ViewController.swift in Sources */,
 				BB872DCD2B2963CA00C5F6EC /* Logger.swift in Sources */,
-				BB872DCB2B29634800C5F6EC /* enums.swift in Sources */,
 				BBD2AB442B293DAF00377BDA /* AppDelegate.swift in Sources */,
 				BB872DCF2B2963E100C5F6EC /* Date+Ex.swift in Sources */,
 				BBD2AB462B293DAF00377BDA /* SceneDelegate.swift in Sources */,
@@ -174,7 +168,6 @@
 /* Begin XCBuildConfiguration section */
 		BBD2AB522B293DB000377BDA /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BB872DC92B29621F00C5F6EC /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -238,7 +231,6 @@
 		};
 		BBD2AB532B293DB000377BDA /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BB872DC92B29621F00C5F6EC /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -295,7 +287,6 @@
 		};
 		BBD2AB552B293DB000377BDA /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BB872DC92B29621F00C5F6EC /* Config.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -326,7 +317,6 @@
 		};
 		BBD2AB562B293DB000377BDA /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BB872DC92B29621F00C5F6EC /* Config.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

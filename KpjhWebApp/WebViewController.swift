@@ -84,13 +84,8 @@ class WebViewController: UIViewController {
     Log.d(webView.configuration.applicationNameForUserAgent)
     
     // 웹뷰 로드
-    guard var urlString = Environment.webViewURL else {
-      Log.d("url string not found")
-      return
-    }
-    if !urlString.hasPrefix("http://"), !urlString.hasPrefix("https://") {
-      urlString = "https://" + urlString
-    }
+    
+    let urlString = "https://www.google.com"
     Log.d("urlString : \(urlString)")
     if let url = URL(string: urlString) {
       let request = URLRequest(url: url)

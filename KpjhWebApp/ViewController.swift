@@ -44,9 +44,9 @@ class ViewController: UIViewController {
     
     // 레이아웃 설정
     NSLayoutConstraint.activate([
-      imageView.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
-      imageView.centerYAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerYAnchor),
-      imageView.widthAnchor.constraint(equalTo: view.safeAreaLayoutGuide.widthAnchor, multiplier: 0.7)
+      imageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+      imageView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+      imageView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.7)
     ])
     
     // 이미지 비율

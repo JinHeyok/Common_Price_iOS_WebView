@@ -81,10 +81,17 @@ class WebViewController: UIViewController {
     webView.navigationDelegate = self
     webView.uiDelegate = self
     
-    print(webView.configuration.applicationNameForUserAgent)
+    Log.d(webView.configuration.applicationNameForUserAgent)
     
     // 웹뷰 로드
-    let urlString = "<#URL_String#>"
+    guard var urlString = Environment.webViewURL else {
+      Log.d("url string not found")
+      return
+    }
+    if !urlString.hasPrefix("http://"), !urlString.hasPrefix("https://") {
+      urlString = "https://" + urlString
+    }
+    Log.d("urlString : \(urlString)")
     if let url = URL(string: urlString) {
       let request = URLRequest(url: url)
       webView.load(request)
@@ -97,15 +104,15 @@ class WebViewController: UIViewController {
 
 extension WebViewController: WKNavigationDelegate {
   func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
-    print("WebView failed with error: \(error.localizedDescription)")
+    Log.d("WebView failed with error: \(error.localizedDescription)")
   }
   
   func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
-    print("WebView navigation failed with error: \(error.localizedDescription)")
+    Log.d("WebView navigation failed with error: \(error.localizedDescription)")
   }
   
   func webView(_ webView: WKWebView, didFailLoadWithError error: Error) {
-    print("WebView failed to load with error: \(error.localizedDescription)")
+    Log.d("WebView failed to load with error: \(error.localizedDescription)")
   }
   func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
     

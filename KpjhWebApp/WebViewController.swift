@@ -89,11 +89,22 @@ class WebViewController: UIViewController {
     // 웹뷰 로드
     
     // urlString 변수에 사용할 url 입력(* 전송 프로토콜 붙여야 함 - http or https)
-    let urlString = "https://www.google.com"
+    let urlString = "https://www.google.com/"
     Log.d("urlString : \(urlString)")
     if let url = URL(string: urlString) {
       let request = URLRequest(url: url)
       webView.load(request)
+    }
+  }
+  
+  private func showAlert(message: String, completion: (() -> Void)? = nil) {
+    let alert = UIAlertController(title: "", message: message, preferredStyle: .alert)
+    let action = UIAlertAction(title: "확인", style: .default) { _ in
+      completion?()
+    }
+    alert.addAction(action)
+    DispatchQueue.main.async {
+      self.present(alert, animated: true)
     }
   }
 }
@@ -102,19 +113,35 @@ class WebViewController: UIViewController {
 // MARK: - WKNavigation Delegate
 
 extension WebViewController: WKNavigationDelegate {
+  
+  
   func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
     Log.d("WebView failed with error: \(error.localizedDescription)")
+    showAlert(message: error.localizedDescription)
   }
   
   func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
     Log.d("WebView navigation failed with error: \(error.localizedDescription)")
+    showAlert(message: error.localizedDescription)
   }
   
   func webView(_ webView: WKWebView, didFailLoadWithError error: Error) {
     Log.d("WebView failed to load with error: \(error.localizedDescription)")
+    showAlert(message: error.localizedDescription)
+  }
+  func webView(_ webView: WKWebView, decidePolicyFor navigationResponse: WKNavigationResponse, decisionHandler: @escaping (WKNavigationResponsePolicy) -> Void) {
+    if let response = navigationResponse.response as? HTTPURLResponse {
+      let statusCode = response.statusCode
+      Log.d("response.statusCode : \(statusCode)")
+      if statusCode != 200 {
+        showAlert(message: "현재 운영중인 상태가 아닙니다.😉\nstatus code : \(statusCode)") {
+          exit(0)
+        }
+      }
+    }
+    decisionHandler(.allow)
   }
   func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
-    
     // Check if the navigation action is a link click
     if navigationAction.navigationType == .linkActivated {
       // Open links with target="_blank" in a new tab

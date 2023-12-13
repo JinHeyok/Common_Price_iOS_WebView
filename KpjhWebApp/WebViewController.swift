@@ -83,6 +83,9 @@ class WebViewController: UIViewController {
     
     Log.d(webView.configuration.applicationNameForUserAgent)
     
+    
+    webView.allowsBackForwardNavigationGestures = true
+    
     // 웹뷰 로드
     
     // urlString 변수에 사용할 url 입력(* 전송 프로토콜 붙여야 함 - http or https)
